@@ -1,0 +1,34 @@
+<html>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-1.12.0.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    
+    <body>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis convallis neque rutrum vulputate. Quisque ut ultrices ante, et efficitur augue. Aenean id convallis leo. Donec tincidunt nibh ac ante pellentesque commodo. Nullam vitae purus gravida, pulvinar odio sit amet, ornare justo. Maecenas neque nunc, feugiat non felis vitae, vestibulum semper arcu. Aliquam iaculis quam sed neque consectetur, sit amet ultrices augue tempus. Quisque vel lacinia eros. In cursus sapien sed erat commodo viverra. Morbi sagittis elementum diam, vitae consectetur tortor accumsan eu. Integer et justo ullamcorper odio elementum porta. Sed mi magna, aliquet sit amet tristique quis, tempus eu lorem. Nulla iaculis malesuada tincidunt. Nunc lacinia dolor quis massa fermentum, sit amet vehicula diam aliquet. In hac habitasse platea dictumst.</p>
+
+        <a href="#" onClick="smaller();">Smaller Text</a> <a href="#" onClick="larger();">Larger Text</a>
+    </body>
+</html>
+
+<script>
+    function smaller(){
+        modifyFontSize('decrease');
+    }
+    function larger(){
+        modifyFontSize('increase');
+    }
+
+    function modifyFontSize(flag) {
+        var divElement = $('p');
+        var currentFontSize = parseInt(divElement.css('font-size'));
+
+        if (flag == 'increase')
+            currentFontSize += 3;
+        else if (flag == 'decrease')
+            currentFontSize -= 3;
+        else
+            currentFontSize = 16;
+
+        divElement.css('font-size', currentFontSize);
+    }
+</script>
